@@ -79,5 +79,16 @@ set complete+=kspell
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Key mapping
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=" "
+
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gd :Gdiffsplit<CR>
+nnoremap <leader>gc :Git commit<CR>
