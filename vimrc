@@ -12,17 +12,23 @@ set history=500
 " :W sudo save
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+" copy past
+set clipboard=unnamedplus
+
+
+set updatetime=300
+set signcolumn=yes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface
 
 " 7 lines to the corsor
-set so=7
+set scrolloff=7
 
 " show position
 set ruler
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Ignore case when searching
 set ignorecase
@@ -35,7 +41,7 @@ set mat=2
 
 " Line Number
 set number
-
+" set relativenumber
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors 
 
@@ -44,6 +50,7 @@ syntax enable
 
 " UTF8 encoding
 set encoding=utf8
+set fileencoding=utf-8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -65,3 +72,12 @@ set laststatus=2
 " https://uni-koeln.de/~pbogusze/posts/ViM_spellchecking.html
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=de
 set complete+=kspell
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
