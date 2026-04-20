@@ -72,7 +72,8 @@ set laststatus=2
 " https://uni-koeln.de/~pbogusze/posts/ViM_spellchecking.html
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=de
 set complete+=kspell
-
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
